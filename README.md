@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# To-Do List Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+A simple and responsive To-Do List application using ReactJS for the frontend and Django for the backend. The app allows users to create, read, update, and delete tasks, with tasks categorized into pending, completed, and overdue sections.
 
-## Available Scripts
+## Tech Stack
+- **Frontend**: ReactJS, React Bootstrap
+- **Backend**: Django, Django REST framework
+- **Database**: SQLite (default), PostgreSQL (optional)
+- **Optional**: Dockerized setup
 
-In the project directory, you can run:
+## Setup Instructions
 
-### `npm start`
+### Prerequisites
+- Node.js and npm
+- Python and pip
+- Django
+- (Optional) Docker
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
+   git clone https://github.com/yourusername/todo-list-app.git
+   cd todo-list-app/frontend
 
-### `npm test`
+2. Install Dependencies:
+    npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Start the React Development server:
+    npm start
 
-### `npm run build`
+### Backend Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to the backend directory:
+    cd ../todolist
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Create a virutal environment and activate it:
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install backend dependencies:
+    pip install -r requirements.txt
 
-### `npm run eject`
+4. Run database migrations:
+    python manage.py makemigrations
+    python manage.py migrate
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Start the Django development server:
+    python manage.py runserver
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Running the Application Locally
+1. Ensure both frontend and backend servers are running:
+    Frontend: npm start (on localhost:3000)
+    Backend: python manage.py runserver (on localhost:8000)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Open your browser and navigate to http://localhost:3000 to access the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##Features Implemented
+1. Core Features:
+    Create, read, update, and delete tasks (CRUD functionality)
+    Task fields: Name, Description, Date Start, Date Due, Status
+    Categorized views: Pending, Completed, Overdue (based on Date Due)
 
-## Learn More
+2. User Authentication (if using NextAuth.jsfor Next.jsprojects):
+    User registration, login, and logout
+    Secured access to tasks for authenticated users
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. State Management:
+    Global state management using Redux (for handling task data and user authentication state)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Optional Features:
+    Responsive UI with Bootstrap
 
-### Code Splitting
+### Notes
+    This project includes a simple setup for both development and production environments. Additional configurations may be required for deployment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
