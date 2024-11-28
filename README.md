@@ -21,7 +21,7 @@ A simple and responsive To-Do List application using ReactJS for the frontend an
 
 1. Clone the repository:
    git clone https://github.com/JkennethDC/todolist-django-react
-   cd todo-list-app/frontend
+   cd todo-list-app
 
 2. Install Dependencies:
     npm install
